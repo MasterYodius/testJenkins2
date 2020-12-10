@@ -1,0 +1,6 @@
+flask
+gunicorn
+psutil
+python-dotenv
+vaderSentiment
+joblib
