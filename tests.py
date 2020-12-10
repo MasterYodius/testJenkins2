@@ -4,7 +4,7 @@ Created on Fri Nov  6 16:47:30 2020
 
 @author: minimilien
 """
-
+!pip install requests
 import requests
 import time as tempo
 
