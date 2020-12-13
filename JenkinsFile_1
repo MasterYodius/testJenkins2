@@ -1,0 +1,36 @@
+pipeline{
+	agent any
+	stages{
+		stage('Build'){
+			steps{
+				echo 'Building docker image'
+				sh 'docker build -t data-eng:latest .'
+			}
+			
+		}
+		stage('Run'){		
+			stage('Run the application'){
+				steps{
+					echo ('Run the app')
+					sh 'docker run --name PROJET -d -p 5000:5000 data-eng'
+				}
+			}
+			
+		}
+		stage('Testing'){
+			steps{
+				sh 'C:\Users\alex-\AppData\Local\Programs\Python\Python37\python.exe tests.py'
+			}
+
+		}
+		stage('Stop Containers'){
+			stage{
+				steps{
+					sh 'docker pause PROJET'
+					sh 'docker container rm --force PROJET'
+					sh 'docker image rm --force data-eng'
+				}
+			}
+		}
+	}
+}
