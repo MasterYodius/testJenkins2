@@ -4,30 +4,30 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building docker image'
-        bat 'bat \'docker build -t data-eng:latest .\''
+        bat 'sh \'docker build -t data-eng:latest .\''
       }
     }
 
     stage('Run') {
       steps {
         echo 'Run the app'
-        bat 'bat \'docker run --name PROJET -d -p 5000:5000 data-eng\''
+        bat 'sh \'docker run --name PROJET -d -p 5000:5000 data-eng\''
       }
     }
 
     stage('Testing') {
       steps {
         echo 'Testing...'
-        bat 'bat \'docker run --name PROJET -d -p 5000:5000 data-eng\''
+        bat 'sh \'docker run --name PROJET -d -p 5000:5000 data-eng\''
       }
     }
 
     stage('Stop the containers') {
       steps {
         echo 'Stopping containers'
-        bat 'bat \'docker pause PROJET\''
-        bat 'bat \'docker container rm --force PROJET\''
-        bat 'bat \'docker image rm --force data-eng\''
+        bat 'sh \'docker pause PROJET\''
+        bat 'sh \'docker container rm --force PROJET\''
+        bat 'sh \'docker image rm --force data-eng\''
       }
     }
 
