@@ -9,12 +9,12 @@ pipeline{
 			
 		}
 		stage('Run'){		
-			stage('Run the application'){
-				steps{
-					echo ('Run the app')
-					sh 'docker run --name PROJET -d -p 5000:5000 data-eng'
-				}
+			
+			steps{
+				echo ('Run the app')
+				sh 'docker run --name PROJET -d -p 5000:5000 data-eng'
 			}
+			
 			
 		}
 		stage('Testing'){
@@ -24,13 +24,13 @@ pipeline{
 
 		}
 		stage('Stop Containers'){
-			stage{
-				steps{
-					sh 'docker pause PROJET'
-					sh 'docker container rm --force PROJET'
-					sh 'docker image rm --force data-eng'
-				}
+			
+			steps{
+				sh 'docker pause PROJET'
+				sh 'docker container rm --force PROJET'
+				sh 'docker image rm --force data-eng'
 			}
+			
 		}
 	}
 }
