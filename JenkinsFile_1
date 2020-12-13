@@ -15,7 +15,7 @@ pipeline{
 		}
 		stage('Testing'){
 			steps{
-				bat 'C:\Users\alex-\AppData\Local\Programs\Python\Python37\python.exe tests.py'
+				bat C:\Users\alex-\AppData\Local\Programs\Python\Python37\python.exe tests.py
 			}
 		}
 	}
