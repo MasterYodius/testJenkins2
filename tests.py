@@ -30,10 +30,7 @@ def test3():
     print(res)
 
 
-def test4():
-    from AI import analyse
-    res=analyse("I like love")
-    print(res)
+
 
 def test5():
     dictToSend = {'question':'what is the answer?'}
