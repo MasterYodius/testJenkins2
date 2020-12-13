@@ -18,7 +18,7 @@ pipeline {
     stage('Testing') {
       steps {
         echo 'Testing...'
-        bat 'docker run --name PROJET -d -p 5000:5000 data-eng'
+        bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
       }
     }
 
