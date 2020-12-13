@@ -67,4 +67,4 @@ def deploiement(*tests):
             raise Exception("False")
     return True
 
-deploiement(test1,test2,test3,test4,test5)
+deploiement(test1,test2,test3,test5)
