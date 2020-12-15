@@ -68,7 +68,7 @@ pipeline{
 						
 						
 						
-'
+
 						bat 'git checkout -b master'
 						
 						bat 'git merge release'
