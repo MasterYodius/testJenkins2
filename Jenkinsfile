@@ -11,7 +11,7 @@ pipeline{
 				}	
 			}
 		}
-		stage('Run' != 'master'){		
+		stage('Run'){		
 			steps{
 				script{
 					if(env.BRANCH_NAME != 'master'){
