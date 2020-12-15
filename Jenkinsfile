@@ -26,8 +26,8 @@ pipeline{
 			steps{
 				script{
 					if(env.BRANCH_NAME == 'features'){
-						
-						bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
+						echo 'unit tests'
+						//bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
 						
 					}
 				}	
