@@ -69,7 +69,7 @@ pipeline{
 						bat 'git pull origin release'
 						
 
-						bat 'git checkout -b master'
+						bat 'git checkout master'
 						
 						bat 'git merge release'
 						
