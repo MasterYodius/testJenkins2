@@ -68,7 +68,8 @@ pipeline{
 						
 						
 						bat 'git remote update'
-						bat 'git fetch'
+						bat 'git fetch --all
+'
 						bat 'git checkout --track origin/master'
 						
 						bat 'git merge release'
