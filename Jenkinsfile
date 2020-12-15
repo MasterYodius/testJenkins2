@@ -26,8 +26,8 @@ pipeline{
 			steps{
 				script{
 					if(env.BRANCH_NAME == 'features'){
-						
-						bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
+						echo 'unit tests'
+						//bat 'C:/Users/alex-/AppData/Local/Programs/Python/Python37/python.exe tests.py'
 						
 					}
 				}	
@@ -66,14 +66,12 @@ pipeline{
 				script{
 					if(env.BRANCH_NAME == 'release'){
 						
-						bat 'git pull origin release'
+						
 						
 
-						bat 'git checkout master'
+						bat 'git checkout -b master'
 						
-						bat 'git merge origin/release'
-						bat 'git commit'
-						bat 'git push origin master --verbose'
+						bat 'git merge release'
 						
 
 
