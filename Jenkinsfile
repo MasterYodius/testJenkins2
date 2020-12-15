@@ -66,7 +66,7 @@ pipeline{
 				script{
 					if(env.BRANCH_NAME == 'release'){
 						
-						
+						bat 'git pull origin release'
 						
 
 						bat 'git checkout -b master'
