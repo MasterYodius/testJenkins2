@@ -65,8 +65,9 @@ pipeline{
 			steps{
 				script{
 					if(env.BRANCH_NAME == 'release'){
-						bat 'git fetch --all'
-						bat 'git merge master'
+						bat 'git checkout master'
+						
+						bat 'git merge release'
 						
 					}
 				}	
