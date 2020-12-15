@@ -67,10 +67,9 @@ pipeline{
 					if(env.BRANCH_NAME == 'release'){
 						
 						
-						bat 'git remote update'
-						bat 'git fetch --all
+						
 '
-						bat 'git checkout --track origin/master'
+						bat 'git checkout -b master'
 						
 						bat 'git merge release'
 						
