@@ -65,10 +65,16 @@ pipeline{
 			steps{
 				script{
 					if(env.BRANCH_NAME == 'release'){
+						
+						
+						bat 'git remote update'
 						bat 'git fetch'
-						bat 'git checkout master'
+						bat 'git checkout --track origin/master'
 						
 						bat 'git merge release'
+						
+
+
 						
 					}
 				}	
